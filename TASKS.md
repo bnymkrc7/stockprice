@@ -24,16 +24,16 @@ _(Henüz tamamlanan görev yok)_
 - [x] Faz 2 test adımı
 
 ## 🔜 Faz 3: Model Mimarileri — PyTorch (Süre: ~2-3 saat)
-- [ ] Faz 3 kodlama adımı
-- [ ] Faz 3 test adımı
+- [x] Faz 3 kodlama adımı
+- [x] Faz 3 test adımı
 
 ## 🔜 Faz 4: LSTM Eğitimi (Süre: ~2-3 saat)
-- [ ] Faz 4 kodlama adımı
-- [ ] Faz 4 test adımı
+- [x] Faz 4 kodlama adımı
+- [x] Faz 4 test adımı
 
 ## 🔜 Faz 5: GRU Eğitimi (Süre: ~1-2 saat)
-- [ ] Faz 5 kodlama adımı
-- [ ] Faz 5 test adımı
+- [x] Faz 5 kodlama adımı
+- [x] Faz 5 test adımı
 
 ## 🔜 Faz 6: Karşılaştırma & İyileştirme (Süre: ~2-3 saat)
 - [ ] Faz 6 kodlama adımı
