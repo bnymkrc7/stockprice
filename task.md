@@ -38,8 +38,20 @@ AMZN hisse senedi fiyatını LSTM ile tahmin eden bir proje.
 - **Test Set:** 500 örnek
 - **Veri Sızıntısı:** ENGELLENDİ (Scaler sadece training verisine fit edildi)
 
-## 🚀 Sıradaki Adım: Faz 3
-LSTM modelinin tasarlanması ve eğitilmesi gerekiyor.
+### 🚀 Sıradaki Adım: Faz 4
+- [/] Faz 4: Model Eğitimi & Karşılaştırma (devam ediyor)
+
+---
+
+### ✅ Faz 3: Model Mimarileri — PyTorch ✅
+- [x] src/models.py oluşturuldu (LSTMModel + GRUModel)
+- [x] LSTMModel: 2 katman, hidden=50, dropout=0.2 → 31,051 parametre
+- [x] GRUModel: 2 katman, hidden=50, dropout=0.2 → 23,301 parametre
+- [x] src/train.py oluşturuldu (train_model fonksiyonu)
+- [x] Mini-batch eğitim döngüsü (Adam optimizer, MSELoss)
+- [x] src/evaluate.py oluşturuldu (evaluate_model, plot_predictions, plot_loss)
+- [x] MSE ve RMSE metrikleri hesaplanıyor
+- [x] Tüm testler başarılı (9 test grubu, 0 hata)
 
 ---
 
