@@ -1,0 +1,38 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pkl
+
+# Data
+data/raw/*.csv
+data/processed/*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/*.log
+
+# Notebooks
+notebooks/data/*
+
+# Environment
+.env
+.env.local
+
+# Temp
+*.tmp
+*.temp
