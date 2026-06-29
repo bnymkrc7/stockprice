@@ -27,24 +27,29 @@ def fetch_tradingview_indicators(
     Returns:
         pd.DataFrame — OHLCV verisi + teknik indikatör sütunları
     """
+    exchange_val = "NASDAQ"
+    symbol_val = symbol
+    if ":" in symbol:
+        exchange_val, symbol_val = symbol.split(":", 1)
+
     handler = TA_Handler(
-        symbol=symbol,
+        symbol=symbol_val,
         screener="america",
-        exchange="NASDAQ",
+        exchange=exchange_val,
         interval=interval,
     )
     df = handler.get_analysis()
 
     # Sütun isimlerini Türkçe açıklamalarla birleştir
     indicator_columns = {
-        "RSI": df.get_indicators()["RSI"],
-        "MACD.macd": df.get_indicators()["MACD.macd"],
-        "MACD.signal": df.get_indicators()["MACD.signal"],
-        "SMA20": df.get_indicators()["SMA20"],
-        "EMA20": df.get_indicators()["EMA20"],
-        "Bollinger_Bands.upper": df.get_indicators()["Bollinger_Bands.upper"],
-        "Bollinger_Bands.lower": df.get_indicators()["Bollinger_Bands.lower"],
-        "Volume": df.get_indicators()["Volume"],
+        "RSI": df.indicators["RSI"],
+        "MACD.macd": df.indicators["MACD.macd"],
+        "MACD.signal": df.indicators["MACD.signal"],
+        "SMA20": df.indicators["SMA20"],
+        "EMA20": df.indicators["EMA20"],
+        "Bollinger_Bands.upper": df.indicators["BB.upper"],
+        "Bollinger_Bands.lower": df.indicators["BB.lower"],
+        "Volume": df.indicators["volume"],
     }
 
     result = pd.DataFrame([indicator_columns])
@@ -71,16 +76,21 @@ def get_multiple_indicators(
     if periods is None:
         periods = [1, 5, 10, 20, 50]
 
+    exchange_val = "NASDAQ"
+    symbol_val = symbol
+    if ":" in symbol:
+        exchange_val, symbol_val = symbol.split(":", 1)
+
     results = []
     for p in periods:
         handler = TA_Handler(
-            symbol=symbol,
+            symbol=symbol_val,
             screener="america",
-            exchange="NASDAQ",
+            exchange=exchange_val,
             interval=interval,
         )
         analysis = handler.get_analysis()
-        indicators = analysis.get_indicators()
+        indicators = analysis.indicators
 
         row = {
             "periyot": p,
@@ -89,9 +99,9 @@ def get_multiple_indicators(
             "MACD_Signal": indicators.get("MACD.signal"),
             "SMA20": indicators.get("SMA20"),
             "EMA20": indicators.get("EMA20"),
-            "BB_Upper": indicators.get("Bollinger_Bands.upper"),
-            "BB_Lower": indicators.get("Bollinger_Bands.lower"),
-            "Volume": indicators.get("Volume"),
+            "BB_Upper": indicators.get("BB.upper"),
+            "BB_Lower": indicators.get("BB.lower"),
+            "Volume": indicators.get("volume"),
         }
         results.append(row)
 
