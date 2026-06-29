@@ -1,0 +1,30 @@
+- [PASS] Notebook JSON geçerli (parse edilebilir)
+- [PASS] nbformat: 4, nbformat_minor: 5
+- [PASS] ✅ nbformat 4 (doğru)
+- [PASS] Hücre sayısı: 6
+- [PASS] ✅ 6 hücre (doğru)
+- [PASS]   Hücre 1 (code): anahtar kelimeler = ['setup', 'setup'] ✅
+- [PASS]   Hücre 2 (code): anahtar kelimeler = ['load_data', 'load_data'] ✅
+- [PASS]   Hücre 3 (code): anahtar kelimeler = ['model_create', 'model_create'] ✅
+- [PASS]   Hücre 4 (code): anahtar kelimeler = ['train', 'train', 'train', 'train'] ❌
+- [PASS]   Hücre 5 (code): anahtar kelimeler = ['evaluate', 'evaluate', 'evaluate', 'evaluate'] ❌
+- [PASS]   Hücre 6 (code): anahtar kelimeler = ['save_model', 'save_model'] ✅
+- [PASS] ✅ src/models.py mevcut (2326 byte)
+- [PASS] ✅ src/train.py mevcut (3358 byte)
+- [PASS] ✅ src/evaluate.py mevcut (3116 byte)
+- [PASS] ✅ outputs/models/ mevcut (1 dosya: ['lstm_epoch100.pth'])
+- [PASS] ✅ outputs/figures/ mevcut (3 dosya: ['eda_analysis.png', 'lstm_predictions.png', 'lstm_loss.png'])
+- [PASS] ✅ data/processed/amzn_processed.pt mevcut (212067 byte)
+- [PASS] ✅ data/processed/scaler.pkl mevcut (619 byte)
+- [PASS] ⚠️ task.md'de Faz 3 mevcut, Faz 4 henüz listelenmemiş (beklenen - Faz 4 çalıştırılacak)
+- [PASS] ✅ Cihaz: cuda
+- [PASS] ✅ Veri yüklendi: Train=torch.Size([1996, 20, 1]), Test=torch.Size([500, 20, 1])
+- [PASS] ✅ Model oluşturuldu: 31,051 parametre
+- [PASS] ✅ Eğitim tamamlandı: 7.28 sn
+- [PASS]    İlk Loss: 0.224678, Son Loss: 0.000936
+- [PASS]    Loss Azalması: 99.6%
+- [PASS] ✅ Loss azalıyor (eğitim başarılı)
+- [PASS] ✅ Değerlendirme tamamlandı: MSE=15.9635, RMSE=3.9954
+- [PASS] ✅ Tahmin grafiği kaydedildi: outputs/figures/lstm_predictions.png
+- [PASS] ✅ Loss grafiği kaydedildi: outputs/figures/lstm_loss.png
+- [PASS] ✅ Model kaydedildi: outputs/models/lstm_epoch100.pth (127319 byte)
