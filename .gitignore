@@ -2,37 +2,47 @@
 .venv/
 venv/
 
-# Python
+# Python bytecode
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+*.pyo
+*.pyd
 *.so
+
+# Pickle files (trained scaler)
 *.pkl
 
-# Data
-data/raw/*.csv
-data/processed/*
+# Data (raw + processed)
+data/raw/
+data/processed/
 
-# IDE
+# Trained model checkpoints
+outputs/models/*.pth
+
+# Figures and visualizations
+outputs/figures/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# OS
-.DS_Store
-Thumbs.db
+# Notebooks temp data
+notebooks/data/
 
-# Logs
-logs/*.log
-
-# Notebooks
-notebooks/data/*
-
-# Environment
+# Environment variables
 .env
 .env.local
 
-# Temp
+# Temp files
 *.tmp
 *.temp

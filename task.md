@@ -93,6 +93,14 @@ AMZN hisse senedi fiyatını LSTM ile tahmin eden bir proje.
 
 ---
 
+| ### ✅ Faz 7: Dokümantasyon & Kapanış ✅
+|- [x] README.md oluşturuldu (147 satır, 7.3 KB) — proje amacı, kurulum, dosya yapısı, çalıştırma, sonuçlar, çıkarımlar
+|- [x] .gitignore güncellendi (48 satır, 25 aktif pattern) — .venv/, __pycache__/, *.pyc, data/raw/, data/processed/, outputs/models/*.pth, outputs/figures/, logs/, .DS_Store
+|- [x] working/done_faz_7.md oluşturuldu
+|- [x] Tüm testler başarılı (22 kontrol, 0 hata)
+
+---
+
 ## 🧪 Test İçin Prompt
 
 Aşağıdaki komutu çalıştırarak projeyi test edebilirsin:
