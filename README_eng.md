@@ -49,26 +49,46 @@ python -c "import pandas; print(pandas.__version__)"
 
 ```
 stock-price-prediction/
-├── data/
-│   ├── raw/                  # Raw CSV data (AMZN_2015-2025.csv)
-│   └── processed/            # Processed tensors (scaler.pkl, amzn_processed.pt)
-├── notebooks/                # Jupyter notebooks (01→05 sequence)
-│   ├── 01_veri_kesfi.ipynb   # EDA and data exploration
-│   ├── 02_veri_hazirlama.ipynb   # Data preprocessing
-│   ├── 03_model_lstm.ipynb   # LSTM model training
-│   ├── 04_model_gru.ipynb    # GRU model training
-│   └── 05_karsilastirma.ipynb    # Model comparison
-├── src/                      # Python modules
-│   ├── data_loader.py        # Data download (yfinance)
-│   ├── preprocessing.py      # MinMaxScaler, create_sequences, prepare_tensors
-│   ├── models.py             # LSTMModel and GRUModel classes
-│   ├── train.py              # Training loop function
-│   └── evaluate.py           # Evaluation and plotting functions
-├── outputs/
-│   ├── models/               # Saved model checkpoints (.pth files)
-│   └── figures/              # Generated plots (.png files)
-├── .venv/                    # Virtual environment
-├── requirements.txt          # Python dependencies
+├── notebooks/                    # Jupyter Notebooks (EDA → comparison)
+│   ├── 01_veri_kesfi.ipynb       # EDA: data load, visualization, statistics
+│   ├── 02_veri_hazirlama.ipynb   # Preprocessing: scaling, sliding window, tensors
+│   ├── 03_model_lstm.ipynb       # LSTM model training & evaluation
+│   ├── 04_model_gru.ipynb        # GRU model training & evaluation
+│   ├── 05_karsilastirma.ipynb    # LSTM vs GRU comparison analysis
+│   └── 06_tradingview_integration.ipynb # TradingView integration & multi-feature modeling
+│
+├── src/                          # Modular Python source code
+│   ├── data_loader.py            # yfinance data downloader / CSV loader
+│   ├── preprocessing.py          # MinMaxScaler, create_sequences, prepare_tensors
+│   ├── models.py                 # LSTMModel and GRUModel (nn.Module)
+│   ├── train.py                  # train_model function (mini-batch loop)
+│   ├── evaluate.py               # evaluate_model, plot_predictions, plot_loss
+│   └── tradingview_features.py   # TradingView indicator fetching functions
+│
+├── data/                         # Data directory
+│   ├── raw/                      # Raw CSV data
+│   │   └── AMZN_2015-2025.csv    # 2516 rows of AMZN daily stock prices
+│   └── processed/                # Preprocessed data tensors
+│       ├── scaler.pkl            # MinMaxScaler (fitted only on train data)
+│       └── amzn_processed.pt     # PyTorch tensors (train + test)
+│
+├── outputs/                      # Outputs
+│   ├── models/                   # Trained model checkpoints
+│   │   ├── lstm_epoch100.pth     # LSTM (31,051 parameters, 100 epochs)
+│   │   └── gru_epoch100.pth      # GRU (23,301 parameters, 100 epochs)
+│   └── figures/                  # Plots and charts
+│       ├── lstm_predictions.png  # LSTM prediction vs actual
+│       ├── lstm_loss.png         # LSTM loss curve
+│       ├── gru_predictions.png   # GRU prediction vs actual
+│       ├── gru_loss.png          # GRU loss curve
+│       ├── comparison_full.png   # Full timeframe comparison
+│       └── comparison_zoomed.png # Zoomed in comparison chart
+│
+├── working/                      # Agent reports and work logs
+├── logs/                         # Training and error logs
+├── .venv/                        # Python virtual environment
+├── test_faz_8.py                 # TradingView integration test script
+├── requirements.txt              # Dependencies
 ├── README.md                 # Turkish documentation
 └── README_eng.md             # English documentation (this file)
 ```
@@ -83,32 +103,32 @@ Run notebooks in order:
 
 1. **Data Collection & EDA**
 ```bash
-cd notebooks/01_veri_kesfi.ipynb
-jupyter nbconvert --to notebook --execute --inplace 01_veri_kesfi.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/01_veri_kesfi.ipynb
 ```
 
 2. **Data Preprocessing**
 ```bash
-cd notebooks/02_veri_hazirlama.ipynb
-jupyter nbconvert --to notebook --execute --inplace 02_veri_hazirlama.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/02_veri_hazirlama.ipynb
 ```
 
 3. **LSTM Training**
 ```bash
-cd notebooks/03_model_lstm.ipynb
-jupyter nbconvert --to notebook --execute --inplace 03_model_lstm.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/03_model_lstm.ipynb
 ```
 
 4. **GRU Training**
 ```bash
-cd notebooks/04_model_gru.ipynb
-jupyter nbconvert --to notebook --execute --inplace 04_model_gru.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/04_model_gru.ipynb
 ```
 
 5. **Model Comparison**
 ```bash
-cd notebooks/05_karsilastirma.ipynb
-jupyter nbconvert --to notebook --execute --inplace 05_karsilastirma.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/05_karsilastirma.ipynb
+```
+
+6. **TradingView Integration**
+```bash
+jupyter nbconvert --to notebook --execute --inplace notebooks/06_tradingview_integration.ipynb
 ```
 
 ### Quick Execution (All Notebooks)

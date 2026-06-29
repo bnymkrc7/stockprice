@@ -39,14 +39,16 @@ stock-price-prediction/
 │   ├── 02_veri_hazirlama.ipynb   # Ön işleme: ölçekleme, sliding window, tensorler
 │   ├── 03_model_lstm.ipynb       # LSTM model eğitimi ve değerlendirme
 │   ├── 04_model_gru.ipynb        # GRU model eğitimi ve değerlendirme
-│   └── 05_karsilastirma.ipynb    # LSTM vs GRU karşılaştırma analizi
+│   ├── 05_karsilastirma.ipynb    # LSTM vs GRU karşılaştırma analizi
+│   └── 06_tradingview_integration.ipynb # TradingView entegrasyonu ve çok boyutlu modelleme
 │
 ├── src/                          # Modüler Python kaynak kodu
 │   ├── data_loader.py            # yfinance tabanlı veri indirme / CSV yükleme
 │   ├── preprocessing.py          # MinMaxScaler, create_sequences, prepare_tensors
 │   ├── models.py                 # LSTMModel ve GRUModel (nn.Module)
 │   ├── train.py                  # train_model fonksiyonu (mini-batch döngüsü)
-│   └── evaluate.py               # evaluate_model, plot_predictions, plot_loss
+│   ├── evaluate.py               # evaluate_model, plot_predictions, plot_loss
+│   └── tradingview_features.py   # TradingView indikatör çekim fonksiyonları
 │
 ├── data/                         # Veri klasörü
 │   ├── raw/                      # Ham CSV verisi
@@ -67,10 +69,13 @@ stock-price-prediction/
 │       ├── comparison_full.png   # Tam zaman dilimi karşılaştırma
 │       └── comparison_zoomed.png # Yakınlaştırılmış karşılaştırma
 │
+├── working/                      # Ajan raporları ve çalışma notları
 ├── logs/                         # Eğitim ve hata logları
 ├── .venv/                        # Python sanal ortamı
+├── test_faz_8.py                 # TradingView entegrasyonu test script'i
 ├── requirements.txt              # Bağımlılıklar
-└── README.md                     # Bu dosya
+├── README.md                     # Bu dosya (Türkçe)
+└── README_eng.md                 # İngilizce dökümantasyon
 ```
 
 ---
@@ -86,6 +91,7 @@ Notebook'ları **sırayla** çalıştırın: her bir sonraki notebook, önceki n
 | 3 | `03_model_lstm.ipynb` | LSTMModel'ı oluşturur, 100 epoch eğitir, değerlendirir, checkpoint kaydeder | ~10-15 dk |
 | 4 | `04_model_gru.ipynb` | GRUModel'ı oluşturur, 100 epoch eğitir, değerlendirir, checkpoint kaydeder | ~10-15 dk |
 | 5 | `05_karsilastirma.ipynb` | Her iki modelin sonuçlarını karşılaştırır, görseller oluşturur, çıkarımlar üretir | ~3 dk |
+| 6 | `06_tradingview_integration.ipynb` | TradingView canlı indikatörleri çeker, 5 feature'lı yeni modelleri eğitir ve karşılaştırır | ~5 dk |
 
 > **Not:** `src/` modülleri doğrudan `import` ile kullanılır. Notebook hücrelerinde `%autoreload 2` aktif edilmiştir.
 
