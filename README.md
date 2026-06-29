@@ -127,7 +127,9 @@ Notebook'ları **sırayla** çalıştırın: her bir sonraki notebook, önceki n
 
 5. **Hangi Model Daha İyi?** Genel olarak **GRU** tercih edilmelidir: daha az parametre, daha hızlı eğitim ve benzer performans. Ancak LSTM, daha uzun bağımlılıkları yakalama konusunda teorik avantajlıdır ve özellikle daha büyük/düzenli zaman serilerinde faydalı olabilir.
 
-6. **Gelecek İyileştirmeler:** TradingView teknik indikatörleri eklenmesi, hiperparametre optimizasyonu (lookback, hidden_size, learning_rate), ve farklı zaman periyotlarında test edilmesi önerilmektedir.
+6. **Gelecek İyileştirmeler:** Hiperparametre optimizasyonu (lookback, hidden_size, learning_rate) ve farklı zaman periyotlarında test edilmesi önerilmektedir. (Not: TradingView teknik indikatör entegrasyonu `feat/tradingview-integration` branch'inde başarıyla tamamlanmıştır!)
+
+7. **Gelecek İyileştirmeler:** Projenin Dockerize edilmesi ve modern bir Web arayüzüne (WebUI) dönüştürülmesi planlanmaktadır.
 
 ---
 
