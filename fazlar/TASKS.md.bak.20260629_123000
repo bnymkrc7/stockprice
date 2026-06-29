@@ -16,12 +16,12 @@ Bu liste, yerel Hermes ajanı ile yürüteceğiniz tüm proje fazlarının durum
 - [x] **1.3** `notebooks/01_veri_kesfi.ipynb` oluşturulması ve EDA işlemlerinin çalıştırılması
 - [x] **1.4** Trend SMA grafikleri (20/50 SMA) ve günlük getiri histogramının çizdirilmesi
 
-## 🟢 Faz 2: Veri Ön İşleme ✅ TAMAMLANDI
-- [x] **2.1** `src/preprocessing.py` modülünün yazılması (MinMaxScaler fit işleminin sadece train setine yapılması ve test verisinin sızdırılmaması)
-- [x] **2.2** Kayan pencere (`lookback=20`) ve sequence oluşturma fonksiyonunun yazılması
-- [x] **2.3** `prepare_tensors` ile verilerin PyTorch float tensorlerine çevrilip bölünmesi
-- [x] **2.4** `notebooks/02_veri_hazirlama.ipynb` ile verilerin ve scaler nesnesinin kaydedilmesi (`data/processed/`)
-- [x] **2.5** Veri sızıntısı (Data Leakage) doğrulama testinin çalıştırılması
+## 🟢 Faz 2: Veri Ön İşleme
+- [ ] **2.1** `src/preprocessing.py` modülünün yazılması (MinMaxScaler fit işleminin sadece train setine yapılması ve test verisinin sızdırılmaması)
+- [ ] **2.2** Kayan pencere (`lookback=20`) ve sequence oluşturma fonksiyonunun yazılması
+- [ ] **2.3** `prepare_tensors` ile verilerin PyTorch float tensorlerine çevrilip bölünmesi
+- [ ] **2.4** `notebooks/02_veri_hazirlama.ipynb` ile verilerin ve scaler nesnesinin kaydedilmesi (`data/processed/`)
+- [ ] **2.5** Veri sızıntısı (Data Leakage) doğrulama testinin çalıştırılması
 
 ## 🟢 Faz 3: Model Mimarileri & Eğitim Modülleri
 - [ ] **3.1** `src/models.py` içinde 2 katmanlı, hidden=50, dropout=0.2 olan `LSTMModel` ve `GRUModel` sınıflarının tanımlanması
