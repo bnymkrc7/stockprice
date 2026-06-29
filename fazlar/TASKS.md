@@ -10,11 +10,11 @@ Bu liste, yerel Hermes ajanı ile yürüteceğiniz tüm proje fazlarının durum
 - [ ] **0.3** Bağımlılıkların dökümünün alınması (`requirements.txt`)
 - [ ] **0.4** `src/cookie_test.py` dosyasının hata yakalama/yedek mekanizmasıyla yazılması ve doğrulanması
 
-## 🟢 Faz 1: Veri Toplama & Keşif
+## 🟢 Faz 1: Veri Toplama & Keşif ✅ TAMAMLANDI
 - [x] **1.1** `src/data_loader.py` modülünün (MultiIndex sütun düzleştirme fonksiyonlu) oluşturulması
-- [-] **1.2** AMZN hissesi 2015-2025 verisinin indirilip `data/raw/` altına kaydedilmesi
-- [-] **1.3** `notebooks/01_veri_kesfi.ipynb` oluşturulması ve EDA işlemlerinin çalıştırılması
-- [-] **1.4** Trend SMA grafikleri (20/50 SMA) ve günlük getiri histogramının çizdirilmesi
+- [x] **1.2** AMZN hissesi 2015-2025 verisinin indirilip `data/raw/` altına kaydedilmesi
+- [x] **1.3** `notebooks/01_veri_kesfi.ipynb` oluşturulması ve EDA işlemlerinin çalıştırılması
+- [x] **1.4** Trend SMA grafikleri (20/50 SMA) ve günlük getiri histogramının çizdirilmesi
 
 ## 🟢 Faz 2: Veri Ön İşleme
 - [ ] **2.1** `src/preprocessing.py` modülünün yazılması (MinMaxScaler fit işleminin sadece train setine yapılması ve test verisinin sızdırılmaması)
