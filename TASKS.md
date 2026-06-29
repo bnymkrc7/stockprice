@@ -36,11 +36,11 @@ _(Henüz tamamlanan görev yok)_
 - [x] Faz 5 test adımı
 
 ## 🔜 Faz 6: Karşılaştırma & İyileştirme (Süre: ~2-3 saat)
-- [ ] Faz 6 kodlama adımı
-- [ ] Faz 6 test adımı
+- [x] Faz 6 kodlama adımı
+- [x] Faz 6 test adımı
 
 ## 🔜 Faz 7: Dokümantasyon & Kapanış (Süre: ~1-2 saat)
-- [ ] Faz 7 kodlama adımı
-- [ ] Faz 7 test adımı
+- [x] Faz 7 kodlama adımı
+- [x] Faz 7 test adımı
 
 ---
