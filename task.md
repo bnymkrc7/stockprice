@@ -38,20 +38,36 @@ AMZN hisse senedi fiyatını LSTM ile tahmin eden bir proje.
 - **Test Set:** 500 örnek
 - **Veri Sızıntısı:** ENGELLENDİ (Scaler sadece training verisine fit edildi)
 
-| ### 🚀 Sıradaki Adım: Faz 6
-||- [ ] Faz 6: Model Karşılaştırma & Sonuç Analizi
+| ### ✅ Faz 5: GRU Eğitimi ✅
+- [x] notebooks/04_model_gru.ipynb oluşturuldu (6 hücreli, LSTM ile aynı yapıda, GRU kullanımı)
+- [x] Hücre 1: Setup (autoreload, import torch, src.models, src.train, src.evaluate)
+- [x] Hücre 2: Veriyi yükle (amzn_processed.pt + scaler.pkl)
+- [x] Hücre 3: GRUModel oluştur (23,301 parametre)
+- [x] Hücre 4: train_model fonksiyonu (100 epoch, lr=0.001)
+- [x] Hücre 5: evaluate_model, plot_predictions, plot_loss çalıştır
+- [x] Hücre 6: Modeli outputs/models/gru_epoch100.pth olarak kaydet
+- [x] outputs/figures/gru_predictions.png ve gru_loss.png oluşturuldu
+- [x] outputs/models/gru_epoch100.pth kaydedildi
+- [x] Tüm testler başarılı (37 kontrol, 0 hata)
 
 ---
 
-### ✅ Faz 4: LSTM Eğitimi ✅
-- [x] notebooks/03_model_lstm.ipynb oluşturuldu (6 hücreli)
+| ### 🚀 Sıradaki Adım: Faz 6
+|||- [ ] Faz 6: Model Karşılaştırma & Sonuç Analizi
+
+---
+
+| ### ✅ Faz 5: GRU Eğitimi ✅
+- [x] notebooks/04_model_gru.ipynb oluşturuldu (6 hücreli, LSTM ile aynı yapıda, GRU kullanımı)
 - [x] Hücre 1: Setup (autoreload, import torch, src.models, src.train, src.evaluate)
 - [x] Hücre 2: Veriyi yükle (amzn_processed.pt + scaler.pkl)
-- [x] Hücre 3: LSTMModel oluştur (31,051 parametre)
+- [x] Hücre 3: GRUModel oluştur (23,301 parametre)
 - [x] Hücre 4: train_model fonksiyonu (100 epoch, lr=0.001)
 - [x] Hücre 5: evaluate_model, plot_predictions, plot_loss çalıştır
-- [x] Hücre 6: Modeli outputs/models/lstm_epoch100.pth olarak kaydet
-- [x] outputs/models/lstm_epoch100.pth (127 KB) kaydedildi
+- [x] Hücre 6: Modeli outputs/models/gru_epoch100.pth olarak kaydet
+- [x] outputs/figures/gru_predictions.png ve gru_loss.png oluşturuldu
+- [x] outputs/models/gru_epoch100.pth kaydedildi
+- [x] Tüm testler başarılı (37 kontrol, 0 hata)
 - [x] outputs/figures/lstm_predictions.png ve lstm_loss.png oluşturuldu
 - [x] Tüm testler başarılı (12 kontrol, 0 hata)
 
